@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto</title>
+</head>
+<body>
+    <h1>Desconto</h1>
+
+    <script>
+
+        let preco = prompt('Informe o preço do produto:')
+        let per = prompt('Informe o percentual do desconto (%)')
+
+        //let precofinal = parseFloat(preco) - (parseFloat(preco) * parseFloat(per)) / 100
+
+        let desconto = (parseFloat(preco) * parseFloat(per)) / 100
+        let precofinal = parseFloat(preco) - desconto
+
+        document.write(`
+        
+        Preço do Produto = ${preco}<br>
+        Desconto = ${per}%<br>
+        
+        O preço final do produto é = ${precofinal}
+
+        `)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Aritméticas</title>
+</head>
+<body>
+    <h1>Operações Aritméticas</h1>
+
+    <script>
+        let n1 = prompt('Digite um numéro:')
+        let n2 = prompt('Digite outro número:')
+
+        let soma = parseFloat(n1) + parseFloat(n2)
+        let sub = parseFloat(n1) - parseFloat(n2)
+        let mult = parseFloat(n1) * parseFloat(n2)
+        let div = parseFloat(n1) / parseFloat(n2)
+
+        document.write(`N1 = ${n1} <br> N2 = ${n2}`)
+
+        document.write(`
+
+        <ul>
+            <li>A soma desses dois números é: ${soma}</li>
+            <li>A substração do primeiro número pelo segundo é: ${sub}</li>
+            <li>A multiplicação desses dois números é: ${mult}</li>
+            <li>A divisão do primeiro número pelo segundo é: ${div}</li>
+        <ul>
+        
+        `)
+    </script>
+</body>
+</html>

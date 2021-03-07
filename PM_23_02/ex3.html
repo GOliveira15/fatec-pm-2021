@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fórmula de Bhaskara</h1>
+
+    <script>
+        let a = parseFloat(prompt('Digite um número:'))
+        let b = parseFloat(prompt('Digite outro número:'))
+        let c = parseFloat(prompt('Digite mais um número:'))
+
+        let delta = Math.pow(b, 2) - 4 * a * c
+
+        if (delta < 0)
+        {
+            document.write(`O resultado do delta é = ${delta}`)
+            document.write('<br>Como delta é menor que zero, a equação não terá raízes reais, pois não existe raiz quadrada de número negativo.')
+        }
+        else
+        {
+            let x1 = (-b + Math.sqrt(delta)) / (2*a)
+            let x2 = (-b - Math.sqrt(delta)) / (2*a)
+
+            document.write(`O resultado do delta é = ${delta}`)
+            document.write(`<br>X1 = ${x1}`)
+            document.write(`<br>X2 = ${x2}`)
+        }
+    </script>
+</body>
+</html>
