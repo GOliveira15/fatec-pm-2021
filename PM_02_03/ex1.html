@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Aritméticas</title>
+    <style>
+        body
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operações Aritméticas</h1>
+
+    <form id="form">
+        <input type="text" id="campon1" placeholder="Digite um número" style="margin-bottom: 10px;"><br>
+        <input type="text" id="campon2" placeholder="Digite outro número"><br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function operacoes(event)
+        {
+            event.preventDefault()
+
+            let n1 = parseFloat(campon1.value)
+            let n2 = parseFloat(campon2.value)
+
+            let soma = parseFloat(n1) + parseFloat(n2)
+            let sub = parseFloat(n1) - parseFloat(n2)
+            let mult = parseFloat(n1) * parseFloat(n2)
+            let div = parseFloat(n1) / parseFloat(n2)
+
+
+            result.innerHTML = `
+
+            N1 = ${n1} <br> N2 = ${n2}
+
+            <ul>
+                <li>A soma desses dois números é: ${soma}</li>
+                <li>A substração do primeiro número pelo segundo é: ${sub}</li>
+                <li>A multiplicação desses dois números é: ${mult}</li>
+                <li>A divisão do primeiro número pelo segundo é: ${div}</li>
+            <ul>
+            
+            `
+        }
+
+        form.addEventListener('submit', operacoes)
+    </script>
+</body>
+</html>
