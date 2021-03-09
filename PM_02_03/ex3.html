@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fórmula de Bhaskara</h1>
+
+    <form id="form">
+        <input type="text" id="fieldn1" placeholder="Digite um número:" style="margin-bottom: 5px"><br>
+        <input type="text" id="fieldn2" placeholder="Digite outro número:" style="margin-bottom: 5px" ><br>
+        <input type="text" id="fieldn3" placeholder="Digite mais um número:" style="margin-bottom: 5px"><br>
+
+        <button id="submit">Calcular</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+        function bhaskara(event)
+        {
+            event.preventDefault()
+
+            let a = parseFloat(fieldn1.value)
+            let b = parseFloat(fieldn2.value)
+            let c = parseFloat(fieldn3.value)
+
+            let delta = Math.pow(b, 2) - 4 * a * c
+
+            if (delta < 0)
+            {
+                result.innerHTML = `O resultado do delta é = ${delta}
+                <br>Como delta é menor que zero, a equação não terá raízes reais, pois não existe raiz quadrada de número negativo.`
+            }
+            else
+            {
+                let x1 = (-b + Math.sqrt(delta)) / (2*a)
+                let x2 = (-b - Math.sqrt(delta)) / (2*a)
+
+                result.innerHTML = `
+                O resultado do delta é = ${delta}
+                <br>X1 = ${x1}
+                <br>X2 = ${x2}`
+            }
+        }
+
+        form.addEventListener('submit', bhaskara)
+    </script>
+</body>
+</html>
