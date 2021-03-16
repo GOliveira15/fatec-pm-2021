@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas-vindas</title>
+</head>
+<body>
+
+    <h1>Dados:</h1>
+
+    <form id="form">
+        <input type="text" id="field1" placeholder="Informe seu nome:"><br>
+        <input type="text" id="field2" placeholder="Indique seu gênero:"><br><br>
+
+        <button id="submit">Enviar</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+
+        function dados(event)
+        {
+            event.preventDefault()
+
+            let answer1 = field1.value
+            let answer2 = field2.value
+
+            if (answer2 === 'Feminino')
+            {
+
+                result.innerHTML = `
+
+                <p style="color: pink;">
+                    <br>Olá, ${answer1}.<br>
+                    Seja bem-vinda ao nosso site.
+                </p>
+                
+                `
+            }
+            else
+            {
+                result.innerHTML = `
+                
+                <p style="color: blue;">
+                    <br>Olá, ${answer1}.<br>
+                    Seja bem-vindo ao nosso site.
+                </p>
+                
+                `
+            }
+        }
+
+        form.addEventListener('submit', dados)
+
+    </script>
+
+</body>
+</html>
