@@ -5,19 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operações Aritméticas</title>
-    <style>
-        body
-        {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <h1>Operações Aritméticas</h1>
 
     <form id="form">
-        <input type="text" id="campon1" placeholder="Digite um número" style="margin-bottom: 10px;"><br>
-        <input type="text" id="campon2" placeholder="Digite outro número"><br><br>
+        <input type="number" id="campon1" placeholder="Digite um número" style="margin-bottom: 10px;"><br>
+        <input type="number" id="campon2" placeholder="Digite outro número"><br><br>
 
         <button type="submit">Calcular</button>
     </form>
@@ -32,21 +26,33 @@
             let n1 = parseFloat(campon1.value)
             let n2 = parseFloat(campon2.value)
 
-            let soma = parseFloat(n1) + parseFloat(n2)
-            let sub = parseFloat(n1) - parseFloat(n2)
-            let mult = parseFloat(n1) * parseFloat(n2)
-            let div = parseFloat(n1) / parseFloat(n2)
+            if (isNaN(n1)) {
+                result.innerHTML = '<p>Informe o primeiro número de forma válida!</p>'
+                return
+            }
 
+            if (isNaN(n2)) {
+                result.innerHTML = '<p>Informe o segundo número de forma válida!</p>'
+                return
+            }
+
+            let soma = n1 + n2
+            let sub = n1 - n2
+            let mult = n1 * n2
+            let div = n1 / n2
+
+            let rest = n1 % n2
 
             result.innerHTML = `
 
-            N1 = ${n1} <br> N2 = ${n2}
+            <br>N1 = ${n1} <br> N2 = ${n2}
 
             <ul>
                 <li>A soma desses dois números é: ${soma}</li>
                 <li>A substração do primeiro número pelo segundo é: ${sub}</li>
                 <li>A multiplicação desses dois números é: ${mult}</li>
                 <li>A divisão do primeiro número pelo segundo é: ${div}</li>
+                <li>O resto da divisão do primeiro número pelo segundo é: ${rest}</l1>
             <ul>
             
             `
