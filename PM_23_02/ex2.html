@@ -11,13 +11,13 @@
 
     <script>
 
-        let preco = prompt('Informe o preço do produto:')
-        let per = prompt('Informe o percentual do desconto (%)')
+        let preco = parseFloat(prompt('Informe o preço do produto:'))
+        let per = parseFloat(prompt('Informe o percentual do desconto (%)'))
 
         //let precofinal = parseFloat(preco) - (parseFloat(preco) * parseFloat(per)) / 100
 
-        let desconto = (parseFloat(preco) * parseFloat(per)) / 100
-        let precofinal = parseFloat(preco) - desconto
+        let desconto = (preco * per) / 100
+        let precofinal = preco - desconto
 
         document.write(`
         

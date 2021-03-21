@@ -10,13 +10,15 @@
     <h1>Operações Aritméticas</h1>
 
     <script>
-        let n1 = prompt('Digite um numéro:')
-        let n2 = prompt('Digite outro número:')
+        let n1 = parseFloat(prompt('Digite um numéro:'))
+        let n2 = parseFloat(prompt('Digite outro número:'))
 
-        let soma = parseFloat(n1) + parseFloat(n2)
-        let sub = parseFloat(n1) - parseFloat(n2)
-        let mult = parseFloat(n1) * parseFloat(n2)
-        let div = parseFloat(n1) / parseFloat(n2)
+        let soma = n1 + n2
+        let sub = n1 - n2
+        let mult = n1 * n2
+        let div = n1 / n2
+
+        let rest = n1 % n2
 
         document.write(`N1 = ${n1} <br> N2 = ${n2}`)
 
@@ -27,6 +29,7 @@
             <li>A substração do primeiro número pelo segundo é: ${sub}</li>
             <li>A multiplicação desses dois números é: ${mult}</li>
             <li>A divisão do primeiro número pelo segundo é: ${div}</li>
+            <li>O resto da divisão do primeiro número pelo segundo é: ${rest}</li>
         <ul>
         
         `)

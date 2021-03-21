@@ -18,7 +18,8 @@
 
         if (delta < 0)
         {
-            document.write(`O resultado do delta é = ${delta}`)
+            document.write(`A=${a}, B=${b}, C=${c}`)
+            document.write(`<br><br>O resultado do delta é = ${delta}`)
             document.write('<br>Como delta é menor que zero, a equação não terá raízes reais, pois não existe raiz quadrada de número negativo.')
         }
         else
@@ -26,8 +27,9 @@
             let x1 = (-b + Math.sqrt(delta)) / (2*a)
             let x2 = (-b - Math.sqrt(delta)) / (2*a)
 
-            document.write(`O resultado do delta é = ${delta}`)
-            document.write(`<br>X1 = ${x1}`)
+            document.write(`A=${a}, B=${b}, C=${c}`)
+            document.write(`<br><br>O resultado do delta é = ${delta}`)
+            document.write(`<br><br>X1 = ${x1}`)
             document.write(`<br>X2 = ${x2}`)
         }
     </script>
