@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,14 @@
 
     <form id="form">
         <input type="text" id="field1" placeholder="Informe seu nome:"><br>
-        <input type="text" id="field2" placeholder="Indique seu gênero:"><br><br>
+        
+        <select id="field2" required>
+            <option value="">Qual seu gênero?</option>
+            <option value="f">Feminino</option>
+            <option value="m">Masculino</option>
+        </select>
 
-        <button id="submit">Enviar</button>
+        <br><button id="submit">Enviar</button>
     </form>
 
     <div id="result"></div>
@@ -24,16 +29,26 @@
         {
             event.preventDefault()
 
-            let answer1 = field1.value
-            let answer2 = field2.value
+            let name = field1.value
+            let gender = field2.value
 
-            if (answer2 === 'Feminino')
+            if (name === '') {
+                result.innerHTML = '<p class="negative">Quanta crueldade não querer me falar seu nome!</p>'
+                return
+            }
+
+            if (gender === '') {
+                result.innerHTML = '<p class="negative">E que tal selecionar o gênero conforme solicitei?</p>'
+                return
+            }
+
+            if (gender === 'f')
             {
 
                 result.innerHTML = `
 
                 <p style="color: pink;">
-                    <br>Olá, ${answer1}.<br>
+                    Olá, ${name}.<br>
                     Seja bem-vinda ao nosso site.
                 </p>
                 
@@ -44,7 +59,7 @@
                 result.innerHTML = `
                 
                 <p style="color: blue;">
-                    <br>Olá, ${answer1}.<br>
+                    Olá, ${name}.<br>
                     Seja bem-vindo ao nosso site.
                 </p>
                 
