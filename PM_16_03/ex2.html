@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <form id="form">
+        <h1>Tabuada</h1>
+        <input type="number" id="field" placeholder="Escolha um número para saber sua tabuada"><br>
+        <button>Verificar</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function tabuada(event) {
+            event.preventDefault()
+
+            let number = field.value
+
+            if (number === '')
+            {
+                result.innerHTML = `Insira um número conforme solicitado`
+                return
+            }
+
+            result.innerHTML = `<br>O número escolhido foi: ${number}`
+
+            for (let i = 0; i <= 10; i++)
+            {
+                mult = number * i
+                result.innerHTML += `<br>${number} x ${i} = ${mult}`
+            }
+        }
+
+        form.addEventListener('submit', tabuada)
+    </script>
+</body>
+</html>
