@@ -24,16 +24,21 @@
         let n1 = field1.value
         let n2 = field2.value
 
-        result.innerHTML = `<br>Intervalo de números negativos entre ${n1} e ${n2}.`
+        if (n1 === '' || n2 === '') {
+            result.innerHTML = `Digite os dois números conforme solicitado`
+            return
+        }
+
+        result.innerHTML = `<br>Intervalo de números negativos entre ${n1} e ${n2}.<br>`
 
         if (n1 > n2)
         {
-            for (let i = n1; i <= n2; i++) {
+            for (let i = n1; i >= n2; i--) {
                 result.innerHTML += `${i}, `
             }
         }
         else {
-            for (let i = n2; i <= n1; i++) {
+            for (let i = n2; i >= n1; i--) {
                 result.innerHTML += `${i}, `
             }
         }
