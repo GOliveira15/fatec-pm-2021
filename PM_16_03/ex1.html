@@ -24,7 +24,7 @@
         let n1 = field1.value
         let n2 = field2.value
 
-        if (n1 === '' || n2 === '') {
+        if (isNaN(n1) || isNaN(n2)) {
             result.innerHTML = `Digite os dois números conforme solicitado`
             return
         }

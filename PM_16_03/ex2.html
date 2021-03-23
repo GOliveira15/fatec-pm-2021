@@ -20,7 +20,7 @@
 
             let number = field.value
 
-            if (number === '')
+            if (isNaN(number))
             {
                 result.innerHTML = `Insira um número conforme solicitado`
                 return
